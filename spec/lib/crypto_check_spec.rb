@@ -39,9 +39,15 @@ RSpec.describe CryptoCheck do
     end
   end
 
-  describe '#fetch_fiat_amount_for_crypto' do
+  describe '#fetch_fiat_amount_for_cryptocurrencies' do
     it 'will output a hash with the selected fiat amount for the selected cryptocurrency', :vcr do
-      expect(CryptoCheck.fetch_fiat_amount_for_crypto(crypto: 'BTC', fiat: 'USD')).to eq({'BTC': { 'USD': 55069.09039011 } })
+      expect(CryptoCheck.fetch_fiat_amount_for_cryptocurrencies(crypto: ['BTC'], fiat: 'USD')).to eq({ 'BTC': { 'USD': 55060.21607633 } })
+    end
+  end
+
+  describe '#find_conversion_values_between_cryptocurrencies' do
+    it 'will output a hash to let the user know the value of one cryptocurrency in another', :vcr do
+      expect(CryptoCheck.find_conversion_between_cryptocurrencies(crypto1: 'BTC', crypto2: 'XRP')).to eq({ 'BTC': { 'XRP': 46634.19821183858 } })
     end
   end
 end
