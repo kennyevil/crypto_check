@@ -1,8 +1,8 @@
-require 'rake/testtask'
+require 'rspec'
+require 'rack/test'
+require 'rspec/core/rake_task'
+require 'dotenv/tasks'
 
-Rake::TestTask.new do |t|
-  t.libs << 'specs'
+task test: :dotenv do
+  RSpec::Core::RakeTask.new(:spec).run_task(verbose: true)
 end
-
-desc "Run specs"
-task :default => :test
