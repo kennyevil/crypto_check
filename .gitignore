@@ -1,0 +1,11 @@
+.DS_Store
+coverage
+doc
+pkg
+.bundle
+*.rbc
+bin
+bundle
+.bundle
+specs.out
+*.gem
