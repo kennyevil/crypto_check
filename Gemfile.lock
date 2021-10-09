@@ -1,7 +1,16 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.8.0)
+      public_suffix (>= 2.0.2, < 5.0)
+    crack (0.4.5)
+      rexml
     diff-lcs (1.4.3)
+    dotenv (2.7.6)
+    hashdiff (1.0.1)
+    json (2.1.0)
+    public_suffix (4.0.6)
+    rexml (3.2.5)
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
       rspec-expectations (~> 3.9.0)
@@ -15,12 +24,21 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.3)
+    vcr (6.0.0)
+    webmock (3.14.0)
+      addressable (>= 2.8.0)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  dotenv
+  json
   rspec
+  vcr
+  webmock
 
 BUNDLED WITH
    2.1.4

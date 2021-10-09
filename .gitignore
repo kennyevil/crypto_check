@@ -9,3 +9,4 @@ bundle
 .bundle
 specs.out
 *.gem
+.env
