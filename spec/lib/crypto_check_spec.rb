@@ -38,4 +38,10 @@ RSpec.describe CryptoCheck do
       expect(payload_ids).to match_array(["BTC", "XRP", "ETH"])
     end
   end
+
+  describe '#fetch_fiat_amount_for_crypto' do
+    it 'will output a hash with the selected fiat amount for the selected cryptocurrency', :vcr do
+      expect(CryptoCheck.fetch_fiat_amount_for_crypto(crypto: 'BTC', fiat: 'USD')).to eq({'BTC': { 'USD': 55069.09039011 } })
+    end
+  end
 end
